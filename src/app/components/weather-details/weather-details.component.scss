@@ -1,0 +1,17 @@
+.details {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  justify-content: space-between;
+  height: 50px;
+  opacity: 0;
+}
+.visible{
+  animation: fadein 2s forwards;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

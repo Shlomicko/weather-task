@@ -1,0 +1,11 @@
+:host {
+  display: grid;
+  place-content: center;
+}
+.wrapper {
+  width: 475px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}

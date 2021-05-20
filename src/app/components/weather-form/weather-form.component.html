@@ -1,0 +1,23 @@
+<form [formGroup]="cityWeatherForm" (ngSubmit)="addCity()">
+  <mat-form-field class="form-element">
+    <input matInput type="text" placeholder="City" [matAutocomplete]="auto"
+           formControlName="city">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions$ | async" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Units" formControlName="units">
+      <mat-option *ngFor="let unit of tempUnits" [value]="unit">
+        {{unit}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-raised-button color="primary">Add</button>
+</form>
+<app-weather-details *ngIf="weatherData" [cityName]="weatherData.name"
+                     [temperatures]="weatherData.main.temp"
+                     [icon]="weatherData.weather[0].icon"
+></app-weather-details>

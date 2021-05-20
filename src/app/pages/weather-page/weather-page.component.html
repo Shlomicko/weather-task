@@ -1,0 +1,12 @@
+<div class="wrapper">
+  <ng-template #formContainer>
+
+  </ng-template>
+
+  <mat-list role="list" *ngIf="locations.length>0">
+    <ng-container *ngFor="let data of locations;let i=index">
+      <mat-list-item role="listitem">{{i + 1}}
+        . {{data.name}} {{data.main.temp}}&deg;;   {{data.weather[0].description}}</mat-list-item>
+    </ng-container>
+  </mat-list>
+</div>
